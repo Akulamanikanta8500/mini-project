@@ -1,0 +1,65 @@
+/* --- 1. DEFINE DEFAULT DYNAMIC COLORS ---
+  These are the default values. React will be able to
+  override these to change the theme.
+*/
+:root {
+    --color-bg-dark: #212529;
+    --color-primary: #0a5edc;
+    --color-primary-darker: #004a99;
+    --color-text-light: #ffffff;
+    --color-text-muted: #adb5bd;
+    --color-active-border: #0d6efd;
+}
+
+/* --- Holiday Banner --- */
+.holiday-banner {
+    background-color: var(--color-primary-darker);
+    /* Use variable */
+    font-weight: 500;
+    border-radius: 4px;
+    color: var(--color-text-light);
+    /* Use variable */
+}
+
+/* --- Navigation Bar --- */
+/* We must use !important to override Bootstrap's default "bg-dark" */
+.navbar {
+    background-color: var(--color-bg-dark) !important;
+    /* Use variable */
+}
+
+/* Style for the 'active' link */
+.navbar-nav .nav-link.active {
+    color: var(--color-text-light) !important;
+    /* Use variable */
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-active-border);
+    /* Use variable */
+}
+
+/* Style for non-active links */
+.navbar-nav .nav-link {
+    color: var(--color-text-muted);
+    /* Use variable */
+    font-weight: 500;
+    margin-right: 0.5rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-text-light);
+    /* Use variable */
+}
+
+/* --- Icon Navigation --- */
+.icon-nav .nav-link i {
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    /* Use variable */
+    transition: color 0.2s ease-in-out;
+}
+
+.icon-nav .nav-link:hover i {
+    color: var(--color-text-light);
+    /* Use variable */
+}

@@ -1,0 +1,63 @@
+/* Use a light background for the whole page */
+.app-container {
+  background: linear-gradient(45deg, #003366, #0056b3);
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Custom styles for the main card */
+.app-card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(30, 85, 204, 0.1);
+  overflow: hidden;
+  /* Ensures header corners are rounded */
+}
+
+/* This is the key "colorful" part */
+.app-header {
+  background: linear-gradient(45deg, #003366, #0056b3);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.app-header h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.app-header-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for the icons inside the form fields */
+.form-icon {
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  color: #003366;
+  /* Match the university color */
+}
+
+/* Custom submit button */
+.submit-button {
+  background-color: #28a745;
+  /* Green for success/submit */
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Make the declaration label more clear */
+.declaration-label {
+  font-weight: 500;
+  margin-left: 0.5rem;
+}

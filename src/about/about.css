@@ -1,0 +1,122 @@
+/*
+  MODIFIED CSS FILE (AboutSVU.css)
+  - Color palette changed from Maroon to Blue
+*/
+
+/* Define the blue theme colors */
+:root {
+    --university-deep-blue: #003366;
+    --university-accent-blue: #3399FF;
+    --university-deep-blue-darker: #002244;
+    /* For hovers */
+    --text-dark: #212529;
+}
+
+/* Import a clean, modern font (optional, add to your main index.css) */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
+
+/* body {
+  font-family: 'Poppins', sans-serif;
+} 
+*/
+
+.about-svu-page {
+    /* Simple fade-in animation for the whole page */
+    animation: fadeInPage 1s ease-out;
+}
+
+/* 1. Hero Section Styling */
+.about-hero {
+    /*
+    REPLACE THIS URL: Find a high-quality, wide image of the
+    SVU campus or archway for the background.
+  */
+
+    /* --- COLOR CHANGE HERE --- */
+    /* Changed overlay from maroon to a deep blue gradient */
+    background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 0, 0, 0.8)),
+        url('https://svuniversity.edu.in/storage/2023/11/slider-2.jpg');
+
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+}
+
+.about-hero h1 {
+    /* A more elegant, serif font for the main title */
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+/* 2. Introduction Section */
+.img-fluid.rounded.shadow-lg {
+    /* Just to make the shadow a bit more subtle and modern */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Creative Card Styling */
+.creative-card {
+    border: none;
+    /* Remove default card border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.creative-card:hover {
+    /* This is the "lift" effect on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* --- PRIMARY COLOR CHANGES ---
+  This section swaps all maroon elements to the blue theme.
+*/
+.text-primary {
+    color: var(--university-deep-blue) !important;
+}
+
+.btn-primary {
+    background-color: var(--university-deep-blue);
+    border-color: var(--university-deep-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--university-deep-blue-darker);
+    border-color: var(--university-deep-blue-darker);
+}
+
+.btn-outline-primary {
+    border-color: var(--university-deep-blue);
+    color: var(--university-deep-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--university-deep-blue);
+    color: #fff;
+}
+
+/* --- END OF COLOR CHANGES --- */
+
+
+/* Page fade-in animation */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add support for Bootstrap Icons */
+.bi {
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+/* Added hover effect for icons */
+.bi:hover {
+    color: var(--university-accent-blue);
+}

@@ -1,0 +1,217 @@
+/*
+  Theme updated to a Blue color palette
+*/
+:root {
+    --university-deep-blue: #003366;
+    /* Replaces maroon */
+    --university-accent-blue: #3399FF;
+    /* Replaces gold */
+    --svu-light-gray: #f8f9fa;
+    --text-dark: #212529;
+    --text-light: #495057;
+}
+
+body {
+    background-color: var(--svu-light-gray);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- 1. Navbar --- */
+.navbar {
+    background-color: var(--university-deep-blue) !important;
+    position: sticky;
+}
+
+.navbar-brand,
+.nav-link {
+    /* Changed this to white to be readable on the dark blue background */
+    color: white !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--university-accent-blue) !important;
+}
+
+/* --- 2. Carousel --- */
+.carousel-item img {
+    filter: brightness(70%);
+    object-fit: cover;
+    height: 60vh;
+    /* You can adjust this height */
+    min-height: 640px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    bottom: 10%;
+}
+
+.carousel-caption .display-4 {
+    font-size: 3rem;
+}
+
+/* --- 3. Section Headings --- */
+.section-heading {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    color: var(--university-deep-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--university-accent-blue);
+    margin: 10px auto 0;
+}
+
+/* --- 4. Info Cards --- */
+.info-card {
+    border: none;
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-bottom: 4px solid var(--university-deep-blue);
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--university-deep-blue);
+}
+
+.info-card .card-title {
+    color: var(--text-dark);
+}
+
+.info-card .card-text {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.info-card .btn-primary {
+    background-color: var(--university-deep-blue);
+    border-color: var(--university-deep-blue);
+    font-weight: 600;
+}
+
+.info-card .btn-primary:hover {
+    background-color: #002244;
+    /* A darker version of the deep blue */
+    border-color: #002244;
+}
+
+/* --- 5. Welcome & News Section --- */
+.welcome-section,
+.news-section {
+    background-color: #ffffff;
+    border-left: 5px solid var(--university-deep-blue);
+}
+
+.welcome-section .display-5 {
+    color: var(--university-deep-blue);
+    font-size: 2.5rem;
+    /* Smaller display font for this section */
+}
+
+.vc-photo {
+    width: 100px;
+    /* Adjust as needed */
+    height: 100px;
+    border: 3px solid var(--university-accent-blue);
+}
+
+.news-heading {
+    color: var(--university-deep-blue);
+    font-weight: 700;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.news-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.news-item {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px dashed #ddd;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.news-item a:hover {
+    color: var(--university-deep-blue);
+}
+
+.news-date {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--university-accent-blue);
+    margin-bottom: 0.25rem;
+}
+
+.new-badge {
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.btn-outline-primary {
+    border-color: var(--university-deep-blue);
+    color: var(--university-deep-blue);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--university-deep-blue);
+    color: white;
+}
+
+
+/* --- 6. Footer --- */
+.footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2.5rem 0;
+    margin-top: 4rem;
+}
+
+.footer a {
+    color: var(--university-accent-blue);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer hr {
+    border-color: #555;
+}

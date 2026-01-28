@@ -1,0 +1,200 @@
+/* Transfer Certificate Styling */
+.tc-page-wrapper {
+    background: linear-gradient(135deg, #002244 0%, #0055aa 50%, #002244 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tc-document {
+    width: 210mm;
+    /* A4 Width */
+    min-height: 297mm;
+    /* A4 Height */
+    background: rgba(255, 255, 255, 0.82);
+    /* Transparent white */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    color: #2c3e50;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.tc-border-outer {
+    border: 8px double #002244;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+.tc-border-inner {
+    border: 2px solid #002244;
+    height: 100%;
+    padding: 40px;
+}
+
+.university-name {
+    color: #002244;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+
+.tc-university-logo {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.university-address {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.accreditation-badge {
+    display: inline-block;
+    background: #002244;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-divider {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #002244, #002244, transparent);
+    width: 85%;
+    margin: 0 auto;
+}
+
+.tc-title {
+    color: #0055aa;
+    text-decoration: underline;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.tc-text {
+    font-size: 1.25rem;
+    line-height: 2;
+    text-align: justify;
+}
+
+.tc-info-table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.tc-info-table td {
+    border: none;
+    font-size: 1.15rem;
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.tc-field-value {
+    border-bottom: 1px dotted #002244 !important;
+    font-weight: 700;
+    color: #001a33;
+}
+
+.tc-declaration {
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px dashed #ccc;
+    padding-top: 20px;
+}
+
+.signature-line {
+    border-bottom: 2px solid #002244;
+    width: 200px;
+    display: inline-block;
+}
+
+.university-seal {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #0055aa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #0055aa;
+    opacity: 0.5;
+    transform: rotate(-15deg);
+}
+
+.tc-watermark {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tc-watermark img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+}
+
+/* Print Specific Optimizations */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .tc-document,
+    .tc-document * {
+        visibility: visible;
+    }
+
+    .tc-document {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .tc-page-wrapper {
+        padding: 0 !important;
+        background: white;
+    }
+
+    .tc-border-outer {
+        border-width: 2px;
+    }
+}
+
+.w-150 {
+    width: 150px;
+}
+
+.mt-10 {
+    margin-top: 5rem;
+}
