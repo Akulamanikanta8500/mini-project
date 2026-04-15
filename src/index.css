@@ -1,0 +1,11 @@
+
+/* Global Floating Animation */
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.floating-logo {
+    animation: floatLogo 4s ease-in-out infinite;
+}
+

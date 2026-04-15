@@ -1,18 +1,23 @@
 /* Use a light background for the whole page */
 .app-container {
-  background: linear-gradient(45deg, #003366, #0056b3);
+  background: radial-gradient(at 0% 0%, hsla(210, 100%, 20%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(220, 100%, 25%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(230, 100%, 30%, 1) 0, transparent 50%);
+  background-color: #001a33;
   min-height: 100vh;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
 }
 
 /* Custom styles for the main card */
 .app-card {
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(30, 85, 204, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  /* Ensures header corners are rounded */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: relative;
+  /* Needed for absolute watermark */
 }
 
 /* This is the key "colorful" part */
@@ -29,8 +34,14 @@
 }
 
 .app-header-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  width: 75px;
+  height: 75px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
 }
 
 /* Style for the icons inside the form fields */
@@ -61,3 +72,35 @@
   font-weight: 500;
   margin-left: 0.5rem;
 }
+/* Watermark for Application Form */
+.app-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-watermark img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+/* Ensure form content stays above watermark */
+.app-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+

@@ -38,7 +38,7 @@ const Login = () => {
     setError('');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', { ...formData, role });
+      const res = await axios.post('/api/auth/login', { ...formData, role });
 
       // Save Data for Navbar and Auto-fill
       localStorage.setItem('token', res.data.token);
@@ -69,7 +69,7 @@ const Login = () => {
         {/* Left Side */}
         <Col md={5} lg={4} className="d-none d-md-flex flex-column justify-content-center align-items-center text-white"
           style={{ background: 'linear-gradient(160deg, #002244 0%, #0055aa 100%)' }}>
-          <FaUniversity size={80} className="mb-4 text-info" />
+          <FaUniversity size={100} className="mb-4 text-info floating-logo" />
           <h2 className="fw-bold">SV University</h2>
           <p className="opacity-75">Secure Access Portal</p>
         </Col>

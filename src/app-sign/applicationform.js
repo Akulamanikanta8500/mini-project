@@ -133,7 +133,7 @@ export function ApplicationForm() {
       }
 
       // 2. POST to Backend
-      const response = await fetch('http://localhost:5000/api/applications', {
+      const response = await fetch('/api/applications', {
         method: 'POST',
         body: data // FormData handles boundary automatically
       });
@@ -172,8 +172,12 @@ export function ApplicationForm() {
         <Row className="justify-content-center">
           <Col md={10} lg={8}>
             <Card className="app-card">
+              <div className="app-watermark">
+                <img src="/sv_university_logo_new.png" alt="Watermark" className="floating-logo" />
+              </div>
+
               <Card.Header className="app-header">
-                <FaUniversity className="app-header-icon" />
+                <img src="/sv_university_logo_new.png" alt="SV University Logo" className="app-header-icon floating-logo" />
                 <h2>SV University</h2>
                 <p className="mb-0">Transfer Certificate (TC) Application</p>
               </Card.Header>

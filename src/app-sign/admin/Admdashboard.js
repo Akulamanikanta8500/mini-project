@@ -6,7 +6,7 @@ import { FaFilePdf, FaCheck, FaTimes, FaExternalLinkAlt } from 'react-icons/fa';
 
 // This function fetches data from the real backend
 const fetchApplications = async () => {
-  const response = await fetch('http://localhost:5000/api/applications');
+  const response = await fetch('/api/applications');
   if (!response.ok) throw new Error('Failed to fetch applications');
   return await response.json();
 };
@@ -43,7 +43,7 @@ export function AdminDashboard() {
   // Update application status
   const updateStatus = async (id, newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/applications/${id}/status`, {
+      const response = await fetch(`/api/applications/${id}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
@@ -110,7 +110,7 @@ export function AdminDashboard() {
                     <td>
                       {app.noDuesFile ? (
                         <a
-                          href={`http://localhost:5000/uploads/${app.noDuesFile}`}
+                          href={`/uploads/${app.noDuesFile}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="btn btn-outline-info btn-sm"

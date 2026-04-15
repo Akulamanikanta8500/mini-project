@@ -1,9 +1,9 @@
 /* Transfer Certificate Styling */
 .tc-page-wrapper {
-    background: linear-gradient(135deg, #002244 0%, #0055aa 50%, #002244 100%);
+    background: radial-gradient(circle at 50% 50%, #001a33 0%, #000000 100%);
     background-attachment: fixed;
     min-height: 100vh;
-    padding: 50px 0;
+    padding: 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,8 +12,8 @@
 .tc-document {
     width: 210mm;
     /* A4 Width */
-    min-height: 297mm;
-    /* A4 Height */
+    min-height: 290mm;
+    /* Slightly less than A4 to ensure fit */
     background: rgba(255, 255, 255, 0.82);
     /* Transparent white */
     backdrop-filter: blur(12px);
@@ -37,19 +37,21 @@
 .tc-border-inner {
     border: 2px solid #002244;
     height: 100%;
-    padding: 40px;
+    padding: 25px;
+    /* Further reduced from 30px */
 }
 
 .university-name {
     color: #002244;
     letter-spacing: 2px;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    /* Reduced from 2.5rem */
 }
 
 .tc-university-logo {
     width: 120px;
     height: auto;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .university-address {
@@ -80,24 +82,30 @@
     color: #0055aa;
     text-decoration: underline;
     font-weight: 800;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
+    /* Reduced from 5px */
+    font-size: 1.8rem;
 }
 
 .tc-text {
-    font-size: 1.25rem;
-    line-height: 2;
+    font-size: 1.15rem;
+    /* Reduced from 1.25rem */
+    line-height: 1.6;
+    /* Reduced from 2.0 */
     text-align: justify;
 }
 
 .tc-info-table {
     border-collapse: separate;
-    border-spacing: 0 15px;
+    border-spacing: 0 6px;
+    /* Further reduced from 10px */
 }
 
 .tc-info-table td {
     border: none;
     font-size: 1.15rem;
-    padding: 12px 15px;
+    padding: 6px 15px;
+    /* Further reduced from 8px */
     vertical-align: middle;
 }
 
@@ -138,16 +146,19 @@
 
 .tc-watermark {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    opacity: 0.05;
+    width: 70%;
+    opacity: 0.1;
+    /* Increased slightly for better visibility with blending */
     pointer-events: none;
     z-index: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    mix-blend-mode: multiply;
+    /* MERGE with paper background */
 }
 
 .tc-watermark img {
@@ -168,13 +179,17 @@
     }
 
     .tc-document {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        margin: 0;
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
         padding: 0 !important;
         box-shadow: none !important;
+        border: none !important;
+        background: white !important;
+        transform: scale(0.98);
+        /* Slight scale down to ensure no edge clipping */
+        transform-origin: top center;
     }
 
     .no-print {
@@ -188,6 +203,11 @@
 
     .tc-border-outer {
         border-width: 2px;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm;
     }
 }
 

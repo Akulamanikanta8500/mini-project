@@ -27,7 +27,7 @@ function HomePage() { // Named export to match your App.js import
     const fetchStudentTCStatus = async (studentId) => {
         try {
             setLoading(true);
-            const res = await fetch(`http://localhost:5000/api/applications/student/${studentId}`);
+            const res = await fetch(`/api/applications/student/${studentId}`);
             if (res.ok) {
                 const data = await res.json();
                 setTcApplication(data);
@@ -231,7 +231,7 @@ function HomePage() { // Named export to match your App.js import
                             <h2 className="display-5 fw-bold lh-1">From the Vice-Chancellor's Desk</h2>
                             <p className="lead mt-4">"Welcome to our University, a place where bright minds converge. Our mission is to foster innovation, critical thinking, and a passion for learning. We are dedicated to providing a transformative educational experience..."</p>
                             <img src="https://placehold.co/150x150/EEEEEE/333?text=VC" alt="Vice-Chancellor" className="vc-photo rounded-circle float-start me-3" />
-                            <p className="fw-bold mb-0 mt-3">Prof.  Akula Manikanta</p>
+                            <p className="fw-bold mb-0 mt-3">Prof. Tata .Nasinga Rao</p>
                             <p className="text-muted">Vice-Chancellor</p>
                         </div>
                     </div>

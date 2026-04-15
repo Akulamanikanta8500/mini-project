@@ -20,7 +20,7 @@ export function SignIn() {
 
     try {
       // Use the actual backend URL (assuming proxy or CORS setup, typically localhost:5000)
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: email, password, role: 'student' }), // Assuming email input is used for userId

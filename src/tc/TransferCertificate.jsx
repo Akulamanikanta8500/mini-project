@@ -18,7 +18,7 @@ const TransferCertificate = () => {
         if (!tcData && id) {
             const fetchTcData = async () => {
                 try {
-                    const response = await fetch(`http://localhost:5000/api/applications/${id}`);
+                    const response = await fetch(`/api/applications/${id}`);
                     if (!response.ok) throw new Error('Could not fetch TC data');
                     const data = await response.json();
                     setTcData(data);
@@ -72,9 +72,9 @@ const TransferCertificate = () => {
                     <div className="tc-border-inner p-5">
 
                         {/* Header */}
-                        <div className="tc-header text-center mb-5">
+                        <div className="tc-header text-center mb-3">
                             <div className="tc-logo-container mb-3">
-                                <img src="/sv_university_logo.png" alt="SV University Logo" className="tc-university-logo" />
+                                <img src="/sv_university_logo_new.png" alt="SV University Logo" className="tc-university-logo floating-logo" />
                             </div>
                             <h1 className="university-name fw-bold">SRI VENKATESWARA UNIVERSITY</h1>
                             <h5 className="university-address text-muted">TIRUPATI - 517 502, ANDHRA PRADESH, INDIA</h5>
@@ -82,12 +82,12 @@ const TransferCertificate = () => {
                                 <span className="badge-text">Accredited by NAAC with 'A+' Grade</span>
                             </div>
                             <hr className="header-divider mt-4" />
-                            <h2 className="tc-title mt-4">TRANSFER CERTIFICATE</h2>
+                            <h2 className="tc-title mt-3">TRANSFER CERTIFICATE</h2>
                         </div>
 
                         {/* Certificate Body */}
-                        <div className="tc-body mt-5">
-                            <div className="tc-meta-row d-flex justify-content-between mb-4">
+                        <div className="tc-body mt-3">
+                            <div className="tc-meta-row d-flex justify-content-between mb-2">
                                 <p><strong>TC No:</strong> {tcData.applicationNumber || 'TC-' + Math.floor(Math.random() * 10000)}</p>
                                 <p><strong>Date:</strong> {new Date().toLocaleDateString()}</p>
                             </div>
@@ -99,7 +99,7 @@ const TransferCertificate = () => {
                                 <strong> {tcData.department}</strong>.
                             </p>
 
-                            <table className="table mt-4 tc-info-table">
+                            <table className="table mt-2 tc-info-table">
                                 <tbody>
                                     <tr>
                                         <td className="fw-bold" width="40%">Student ID / Roll No:</td>
@@ -136,14 +136,14 @@ const TransferCertificate = () => {
                                 </tbody>
                             </table>
 
-                            <p className="mt-5 tc-declaration">
+                            <p className="mt-3 tc-declaration">
                                 He/She has paid all dues to the University and his/her name has been removed
                                 from the rolls of the University effective from the date of this certificate.
                             </p>
                         </div>
 
                         {/* Footer / Signatures */}
-                        <div className="tc-footer d-flex justify-content-between mt-10 align-items-end pt-5">
+                        <div className="tc-footer d-flex justify-content-between mt-10 align-items-end pt-3">
                             <div className="signature-box text-center">
                                 <div className="signature-line mb-2 w-150"></div>
                                 <p className="mb-0 fw-bold">Clerk</p>
@@ -161,7 +161,7 @@ const TransferCertificate = () => {
                 </div>
 
                 <div className="tc-watermark">
-                    <img src="/sv_university_logo.png" alt="Watermark" />
+                    <img src="/sv_university_logo_new.png" alt="Watermark" className="floating-logo" />
                 </div>
             </div>
 

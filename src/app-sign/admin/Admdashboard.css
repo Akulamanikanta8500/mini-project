@@ -1,0 +1,26 @@
+
+.card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+
+.table tr {
+    transition: all 0.3s ease;
+}
+
+.table tr:hover {
+    background-color: rgba(0, 51, 102, 0.05) !important;
+    transform: scale(1.01) translateZ(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-sm {
+    transition: transform 0.2s ease;
+}
+
+.btn-sm:hover {
+    transform: translateY(-2px);
+}
+
