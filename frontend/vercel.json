@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://b-mini-project.onrender.com"
+    }
+  ]
+}
